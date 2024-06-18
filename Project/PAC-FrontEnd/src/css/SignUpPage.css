@@ -1,0 +1,65 @@
+/* src/css/SignUpPage.css */
+.signUpLayout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  font-family: 'Arial, sans-serif';
+}
+
+.signUpContent {
+  flex: 1;
+  padding: 40px 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.signUpContent h1 {
+  font-size: 28px;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.signUpContent .formGroup {
+  margin-bottom: 15px;
+}
+
+.signUpContent label {
+  display: block;
+  font-size: 14px;
+  color: #666666;
+  margin-bottom: 5px;
+}
+
+.signUpContent input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+.signUpContent button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.signUpContent .googleSignUp {
+  background-color: #db4437;
+}
+
+.signUpContent p {
+  font-size: 14px;
+  color: #666666;
+  margin-top: 15px;
+}
