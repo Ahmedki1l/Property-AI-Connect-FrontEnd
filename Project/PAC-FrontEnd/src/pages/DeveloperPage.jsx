@@ -26,7 +26,7 @@ const DeveloperPage = () => {
   }, []);
 
   return (
-    <div>
+    <div className="find-assets-page">
       <NavBar />
       <div className="developer-page">
         <div className="left-container">
