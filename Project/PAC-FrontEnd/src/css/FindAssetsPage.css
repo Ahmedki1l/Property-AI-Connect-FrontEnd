@@ -1,0 +1,85 @@
+/* src/css/FindAssetsPage.css */
+.find-assets-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.find-assets-body {
+  display: flex;
+  flex-grow: 1;
+}
+
+.left-container {
+  width: 30%;
+  background-color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  margin-left: 80px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 70%;
+  position: relative;
+}
+
+.custom-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px; /* Adjust the distance from the right */
+  transform: translateY(-50%);
+  /* Add other styling properties based on your custom icon's structure */
+}
+
+.search-box input {
+  flex-grow: 1;
+  border: 1px solid #E5E3E4;
+  background-color: #E5E3E4;
+  border-radius: 5px;
+  padding: 20px 0px 20px 60px;
+  height: 20px;
+  font-size: 20px;
+}
+
+.search-box input::placeholder {
+  color: gray; /* Set the desired color for the placeholder text */
+}
+
+.filters-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  background-color: #E5E3E4;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.filters-button .button-text {
+  font-size: 18px;
+  flex-grow: 1; /* Allow the text to grow and take up available space */
+}
+
+.arrow {
+  font-size: 20px;
+  margin-left: 5px; /* Adjust the margin as needed */
+}
+
+.right-container {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background-color: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* ... (rest of the styles) */

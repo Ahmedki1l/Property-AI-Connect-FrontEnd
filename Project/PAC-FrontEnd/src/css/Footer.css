@@ -1,0 +1,14 @@
+/* src/components/Footer.css */
+.footer {
+  background-color: #ddbeaa;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  z-index: 2; /* Ensure the footer is above other elements */
+}
+
+.footer-link {
+  margin-right: 20px;
+  text-decoration: none;
+  color: black;
+}

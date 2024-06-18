@@ -1,0 +1,93 @@
+/* src/css/NavBar.css */
+.navbar {
+  margin: 0 10px; /* Adjusted space around links */
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  z-index: 2; /* Ensure the navbar is above other elements */
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.username {
+  color: black;
+  margin-left: 20px;
+}
+
+.center {
+  flex-grow: 1; /* Allow the center section to take available space */
+  display: flex;
+  justify-content: center; /* Center the items horizontally */
+}
+
+.nav-link {
+  margin: 0 10px; /* Adjusted space around links */
+  text-decoration: none;
+  color: black;
+  position: relative;
+}
+
+.selected {
+  color: #469697  ;
+  font-weight: bolder;
+}
+
+.selected::after {
+  content: "";
+  display: block;
+  height: 3px;
+  background-color: #a2cacb;
+  position: absolute;
+  bottom: -5px;
+  left: 25%;
+  right: 0;
+  transition: width 0.3s ease-out; /* Adjusted transition property */
+  width: 50%; /* Set initial width to 0 */
+}
+
+.nav-link:not(.selected)::before,
+.nav-link:not(.selected)::after {
+  content: "";
+  display: block;
+  height: 3px;
+  background-color: transparent; /* Set initial color to transparent */
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  right: 50%; /* Start from the center */
+  transition: all 0.3s ease-out; /* Add a transition effect for width and color */
+  width: 0; /* Set initial width to 0 */
+}
+
+.nav-link:not(.selected):hover::before,
+.nav-link:not(.selected):hover::after {
+  background-color: #a2cacb; /* Change color on hover */
+  width: 100%; /* Increase width on hover */
+  left: 0%; /* Move the left side to the center on hover */
+  right: 0; /* Move the right side to the end on hover */
+}
+
+.right {
+  margin-left: auto;
+}
+
+.login-button {
+  background-color: #5ba199;
+  color: black;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.icon {
+  width: 30px; /* Adjust the width as needed */
+  height: 30px; /* Adjust the height as needed */
+  margin-right: 5px; /* Add some spacing between the icon and text */
+}

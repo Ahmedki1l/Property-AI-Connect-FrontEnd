@@ -1,0 +1,26 @@
+/* src/components/BodyContainer.css */
+.body-container {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: flex-start;
+  flex-grow: 1; /* Allow the body container to take available space */
+  z-index: 1; /* Ensure the body container is above the footer */
+  background-color: white;
+}
+
+.background-image {
+  background: url('/public/homePageBackgroundImage.jpeg') center/cover;
+  min-height: 80vh;
+  min-width: 100vw;
+  position: relative;
+}
+
+.image-text {
+  position: absolute;
+  top: 7%;
+  left: 2%;
+  color: #FEFAE0;
+  font-size: 60px;
+  font-weight: bold;
+}

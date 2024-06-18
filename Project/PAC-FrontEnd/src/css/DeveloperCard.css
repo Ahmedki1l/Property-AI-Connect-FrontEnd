@@ -1,0 +1,70 @@
+/* DeveloperCard.css */
+
+.developer-card {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5%;
+}
+
+.developer-image {
+  border: 2px solid #eadec4;
+  width: 35%;
+  height: 70%;
+  overflow: hidden;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  z-index: 999;
+}
+
+.developer-info {
+  border: 2px solid #5ba199;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -15%;
+  padding-top: 15%;
+  margin-bottom: 4%;
+  z-index: 1;
+}
+
+.developer-projects {
+  width: 100%;
+  font-size: larger;
+  margin-left: 7%;
+  color: #9fafae;
+  font-weight: bold;
+}
+
+.view-button {
+  width: 40%;
+  border-radius: 10px;
+  border: 2px #e5e5e5;
+  font-size: medium;
+  color: #5ba199;
+  background-color: #e5e5e5;
+  padding: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.icon2 {
+  width: 50px;
+  height: 50px;
+  margin-right: 5px;
+  background-color: white;
+  margin-bottom: -5%;
+}
+
+.asset-card-link2 {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

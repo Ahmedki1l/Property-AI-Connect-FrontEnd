@@ -1,0 +1,55 @@
+/* src/css/AssetDetailPage.css */
+.asset-detail-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  margin-bottom: 50px;
+}
+
+.cover-image {
+  width: 90%;
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  border-radius: 2px;
+  margin-top: 20px;
+}
+
+.title {
+  text-align: left;
+  margin: 20px 0 10px 0;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.details-box {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px; /* Adjust the gap as needed */
+}
+
+.detail-label {
+  text-align: left;
+  font-size: 20px;
+  width: 100px; /* Adjust the width as needed */
+  font-weight: bold;
+}
+
+.detail-box {
+  display: flex;
+  align-items: center;
+  background-color: #e5e3e4;
+  border-left: 2px solid #000;
+  padding-left: 5px;
+  width: 300px;
+  height: 40px;
+}
+
+.details {
+  text-align: left;
+  margin-top: 20px;
+}

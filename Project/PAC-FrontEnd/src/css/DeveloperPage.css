@@ -1,0 +1,11 @@
+/* DeveloperPage.css */
+.developer-page {
+  display: flex;
+  flex-grow: 1;
+}
+
+.center-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
