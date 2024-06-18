@@ -44,17 +44,25 @@ const NavBar = () => {
         >
           Developers
         </Link>
-        <a href="#" className="nav-link">
+        <Link
+          to="/help"
+          className={`nav-link ${
+            location.pathname === "/help" ? "selected" : ""
+          }`}
+        >
           Help
-        </a>
+        </Link>
       </div>
       <div className="right">
-        <button className="login-button">
-          <strong>Log In</strong>
-        </button>
+        <Link to="/login">
+          <button className="login-button">
+            <strong>Log In</strong>
+          </button>
+        </Link>
       </div>
     </div>
   );
 };
 
 export default NavBar;
+
