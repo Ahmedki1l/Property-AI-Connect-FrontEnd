@@ -1,10 +1,12 @@
-/* src/components/Footer.css */
+/* Footer CSS */
 .footer {
   background-color: #ddbeaa;
   padding: 20px;
   display: flex;
   justify-content: center;
-  z-index: 2; /* Ensure the footer is above other elements */
+  bottom: 0;
+  width: 100%;
+  position: relative;
 }
 
 .footer-link {

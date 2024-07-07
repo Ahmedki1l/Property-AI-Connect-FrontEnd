@@ -1,15 +1,16 @@
-/* src/components/AssetDetailPage.jsx */
 /* eslint-disable no-unused-vars */
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import assetData from "../data/assetData"; // Import the placeholder data
+import axiosInstance from "../api/axios"; // Ensure this is correctly configured
 import "../css/AssetDetailPage.css";
+import MainLayout from "../components/MainLayout";
 
 const AssetDetailPage = () => {
-
   const [assets, setAssets] = useState([]);
+  const location = useLocation();
+  const { id } = useParams();
 
   useEffect(() => {
     fetchAssets();
@@ -17,19 +18,12 @@ const AssetDetailPage = () => {
 
   const fetchAssets = async () => {
     try {
-      const response = await fetch("http://localhost:3001/data/getAllAssets");
-      if (response.ok) {
-        const data = await response.json();
-        setAssets(data.assets);
-      } else {
-        throw new Error("Failed to fetch assets");
-      }
+      const response = await axiosInstance.get("/data/getAllAssets");
+      setAssets(response.data.assets);
     } catch (error) {
-      console.error("Error fetching assets:", error.message);
+      console.error("Error fetching assets:", error);
     }
   };
-  const location = useLocation();
-  const { id } = useParams();
 
   // Find the asset with the matching ID
   const asset = assets.find((data) => data.assetId === parseInt(id));
@@ -40,8 +34,7 @@ const AssetDetailPage = () => {
   }
 
   return (
-    <div>
-      <NavBar />
+    <MainLayout>
       <div className="asset-detail-page">
         <div
           className="cover-image"
@@ -54,7 +47,7 @@ const AssetDetailPage = () => {
         <div className="details-box">
           <p className="detail-label">Location</p>
           <div className="detail-box">
-            <p>{asset.location}</p>
+            <p>{asset.locationName}</p>
           </div>
         </div>
         {/* Add more detail boxes for other details */}
@@ -77,8 +70,7 @@ const AssetDetailPage = () => {
           </div>
         </div>
       </div>
-      <Footer />
-    </div>
+    </MainLayout>
   );
 };
 

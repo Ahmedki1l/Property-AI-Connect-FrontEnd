@@ -19,57 +19,58 @@
   margin-left: 80px;
 }
 
-.search-box {
+.search-box,
+.filter-box {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-  width: 70%;
+  width: 100%;
   position: relative;
 }
 
-.custom-icon {
-  position: absolute;
-  top: 50%;
-  left: 10px; /* Adjust the distance from the right */
-  transform: translateY(-50%);
-  /* Add other styling properties based on your custom icon's structure */
-}
-
-.search-box input {
+.search-box input,
+.filter-box input {
   flex-grow: 1;
   border: 1px solid #E5E3E4;
   background-color: #E5E3E4;
   border-radius: 5px;
-  padding: 20px 0px 20px 60px;
-  height: 20px;
-  font-size: 20px;
+  padding: 10px 10px 10px 40px;
+  font-size: 16px;
 }
 
-.search-box input::placeholder {
-  color: gray; /* Set the desired color for the placeholder text */
+.search-box input::placeholder,
+.filter-box input::placeholder {
+  color: gray;
+}
+
+.custom-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .filters-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 70%;
+  width: 100%;
   background-color: #E5E3E4;
   color: rgb(0, 0, 0);
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 10px;
   cursor: pointer;
 }
 
 .filters-button .button-text {
-  font-size: 18px;
-  flex-grow: 1; /* Allow the text to grow and take up available space */
+  font-size: 16px;
+  flex-grow: 1;
 }
 
 .arrow {
   font-size: 20px;
-  margin-left: 5px; /* Adjust the margin as needed */
+  margin-left: 5px;
 }
 
 .right-container {
@@ -81,5 +82,3 @@
   padding: 20px;
   box-sizing: border-box;
 }
-
-/* ... (rest of the styles) */

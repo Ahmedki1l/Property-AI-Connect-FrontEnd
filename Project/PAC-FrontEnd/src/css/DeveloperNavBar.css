@@ -1,12 +1,19 @@
 .main-navbar-container {
   margin-top: 1%;
   margin-bottom: 1%;
+  display: flex;
+  justify-content: center; /* Center the items horizontally */
+}
+
+.center {
+  display: flex;
 }
 
 .developer-nav-link {
   text-decoration: none;
-  margin-right: 10px;
+  margin-right: 20px;
   color: black;
+  position: relative;
 }
 
 .developer-nav-link:not(.developer-selected)::before,

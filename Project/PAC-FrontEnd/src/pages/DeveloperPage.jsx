@@ -1,9 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
+import axiosInstance from "../api/axios";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import DeveloperCard from "../components/DeveloperCard";
 import "../css/DeveloperPage.css";
+import MainLayout from "../components/MainLayout";
 
 const DeveloperPage = () => {
   const [developers, setDevelopers] = useState([]);
@@ -11,12 +13,8 @@ const DeveloperPage = () => {
   useEffect(() => {
     const fetchDevelopers = async () => {
       try {
-        const response = await fetch("http://localhost:3001/data/getAllDevelopers");
-        if (!response.ok) {
-          throw new Error("Failed to fetch developers");
-        }
-        const data = await response.json();
-        setDevelopers(data.Developers);
+        const response = await axiosInstance.get("/data/getAllDevelopers");
+        setDevelopers(response.data.developers);
       } catch (error) {
         console.error("Error fetching developers:", error);
       }
@@ -26,8 +24,7 @@ const DeveloperPage = () => {
   }, []);
 
   return (
-    <div className="find-assets-page">
-      <NavBar />
+    <MainLayout>
       <div className="developer-page">
         <div className="left-container">
           <div className="search-box">
@@ -43,12 +40,11 @@ const DeveloperPage = () => {
         </div>
         <div className="right-container">
           {developers.map((developer) => (
-            <DeveloperCard key={developer.id} developer={developer} />
+            <DeveloperCard key={developer.developerId} developer={developer} />
           ))}
         </div>
       </div>
-      <Footer />
-    </div>
+    </MainLayout>
   );
 };
 

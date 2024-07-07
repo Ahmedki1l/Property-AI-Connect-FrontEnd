@@ -29,7 +29,7 @@ const DeveloperCard = ({ developer }) => {
               fill="#9FAFAE"
             />
           </svg>
-          {developer.noOfProjects} projects
+          {developer.projects.length} projects
         </p>
       </div>
       <Link to={`/developer/${developer.developerId}/Home`} className="asset-card-link2">

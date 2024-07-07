@@ -1,21 +1,28 @@
 /* eslint-disable no-unused-vars */
-// src/pages/FindAssetsPage.js
 import React, { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import AssetCard from "../components/AssetCard";
 import "../css/FindAssetsPage.css";
+import MainLayout from "../components/MainLayout";
 
 const FindAssetsPage = () => {
   const [assets, setAssets] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [priceFilter, setPriceFilter] = useState("");
 
   useEffect(() => {
     fetchAssets();
-  }, []);
+  }, [searchTerm, priceFilter]);
 
   const fetchAssets = async () => {
     try {
-      const response = await fetch("http://localhost:3001/data/getAllAssets");
+      const token = localStorage.getItem("token");
+      const response = await fetch(`http://localhost:3001/data/getAllAssets?search=${searchTerm}&price=${priceFilter}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       if (response.ok) {
         const data = await response.json();
         setAssets(data.assets);
@@ -28,22 +35,31 @@ const FindAssetsPage = () => {
   };
 
   return (
-    <div className="find-assets-page">
-      <NavBar />
+    <MainLayout>
       <div className="find-assets-body">
         <div className="left-container">
           <div className="search-box">
-            <input type="text" placeholder="area, compound" />
+            <input
+              type="text"
+              placeholder="Search: Asset name"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
             <div className="custom-icon">
               {/* Your SVG or custom HTML structure */}
             </div>
           </div>
-          <button className="filters-button">
-            <div className="button-text">Filters</div>
-            <span className="arrow">
-              <strong>{">"}</strong>
-            </span>
-          </button>
+          <div className="filter-box">
+            <input
+              type="text"
+              placeholder="Set Max price"
+              value={priceFilter}
+              onChange={(e) => setPriceFilter(e.target.value)}
+            />
+            <div className="custom-icon">
+              {/* Your SVG or custom HTML structure */}
+            </div>
+          </div>
         </div>
         <div className="right-container">
           {assets.map((asset, index) => (
@@ -51,8 +67,7 @@ const FindAssetsPage = () => {
           ))}
         </div>
       </div>
-      <Footer />
-    </div>
+    </MainLayout>
   );
 };
 

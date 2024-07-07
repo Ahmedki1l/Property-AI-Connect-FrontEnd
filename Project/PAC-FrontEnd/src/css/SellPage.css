@@ -7,168 +7,91 @@
 
 .sell-content {
   width: 80%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Creates 4 columns */
+  grid-gap: 20px; /* Spacing between fields */
+  padding: 20px;
 }
 
-.top-content {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: row;
-  align-items: start;
-}
-
-.left-content {
-  display: flex;
-  flex-direction: column;
-  margin-right: 30px;
-}
-
-.bottom-content {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: row;
-  align-items: start;
-}
-
-.image-container2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 80%;
-  height: 50vh;
-  overflow: hidden;
-  border-radius: 10px;
-}
-
-.search-box2 {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  position: relative;
-  cursor: pointer;
-}
-
-.custom-icon2 {
-  position: absolute;
-  top: 55%;
-  right: 10px; /* Adjust the distance from the right */
-  transform: translateY(-50%);
-  /* Add other styling properties based on your custom icon's structure */
-}
-
-.background-image {
-  background-image: url("/public/Sell-Image.jpg");
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  margin-bottom: 20px;
+.form-content {
+  display: contents; /* Ensures that child elements follow the grid of the parent */
 }
 
 .input-group {
   display: flex;
-  align-items: center;
+  flex-direction: column; /* Align label and input vertically */
   margin-bottom: 10px;
 }
 
+label {
+  margin-bottom: 5px; /* Space between label and input */
+  font-weight: bold;
+}
+
 .sell-input {
-  width: 300px; /* Adjust width as needed */
-  height: 25px;
-  padding: 10px;
+  height: 35px; /* Increased input height for better click area */
+  padding: 5px 10px;
   border: 2px solid #eadec4;
   border-radius: 2px;
 }
 
 .price-estimator-btn {
+  grid-column: span 4; /* Span across all columns */
   background-color: #eadec4;
   color: #469697;
-  padding: 10px 20px;
+  padding: 15px 50px; /* Adjusted padding */
   border: none;
-  border-radius: 20px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: medium;
-  width: 300px;
-  margin-right: 40px;
-  margin-left: 10px;
   font-weight: bold;
+  margin: 20px auto; /* Center the button */
+  display: block;
 }
 
-.estimated-price-input {
-  width: 300px;
-  height: 25px;
+.price-results {
+  display: flex;
+  justify-content: space-around;
+  grid-column: span 4; /* Span across all columns */
+}
+
+.price-field {
+  width: 30%; /* Adjusted width for the price fields */
   padding: 10px;
   border: 2px solid #eadec4;
   border-radius: 2px;
-}
-input::placeholder {
-  color: #a5b4b3;
+  text-align: center;
 }
 
-.agent-heading,
-.fsbo-heading {
-  margin-top: 20px;
+.image-container2 {
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+  border-radius: 10px;
+  background-image: url("/public/Sell-Image.jpg");
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 20px;
 }
 
-.btn-text {
-  color: #9abdb9;
-}
-
-.find-agent-btn,
-.fsbo-btn {
-  background-color: #e5e3e4;
-  color: #469697;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: medium;
-  width: 300px;
-  margin-right: 40px;
-  margin-left: 10px;
-  font-weight: bold;
-}
-
-.fsbo-btn {
-  margin-bottom: 30px;
-}
-
-.dropdown {
-  position: absolute;
-  top: 100%; /* Adjust to position below the input field */
-  left: 0;
-  width: 300px; /* Match width of input field */
-  background-color: #ffffff;
-  border: 1px solid #eadec4;
-  border-radius: 5px;
-  z-index: 1000;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
-  height: 200px;
-  overflow-x: hidden;
-  white-space: nowrap;
-  touch-action: pan-y;
-  -webkit-overflow-scrolling: touch;
-}
-
-.dropdown-inner {
+.model-toggle {
+  grid-column: span 4; /* Span across all columns */
   display: flex;
-  /* Add this style to enable horizontal scrolling */
-  flex-direction: column;
-  /* Add any other necessary styles */
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.dropdown-item {
-  padding: 10px;
+.model-toggle label {
+  margin-right: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
   cursor: pointer;
 }
 
-.dropdown-item:hover {
-  background-color: #5ba199;
+.model-toggle input[type="radio"] {
+  margin-right: 5px;
+  accent-color: #469697; /* Set the color of the radio button */
 }
-
-.selectedOption {
-  background-color: #5ba199; /* Change background color to highlight */
-  color: white; /* Change text color to white */
-}
-
-/* Adjust styling as needed */
